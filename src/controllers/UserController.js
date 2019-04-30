@@ -1,6 +1,6 @@
-import { UserService } from "./../services/UserService";
-import { ResponseBuilder } from "./../responses/ResponseBuilder";
-import { LoginFailedException } from "../exceptions/LoginFailedException";
+import { UserService } from "../Services/UserService";
+import { ResponseBuilder } from "../Helpers/ResponseBuilder";
+import { LoginFailedException } from "../Exceptions/LoginFailedException";
 
 export class UserController {
 

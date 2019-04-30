@@ -1,6 +1,6 @@
 import restify from "restify";
 import DBConnection from "./config/database";
-import { Router } from "./src/routes/Router";
+import { Router } from "./src/Routes/Router";
 
 /**
  * Create server

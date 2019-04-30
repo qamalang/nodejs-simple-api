@@ -1,6 +1,6 @@
-import UserModel from "./../models/UserModel";
-import { Token } from "./../helpers/Token";
-import { LoginFailedException } from "./../exceptions/LoginFailedException";
+import UserModel from "../Models/UserModel";
+import { Token } from "../Helpers/Token";
+import { LoginFailedException } from "../Exceptions/LoginFailedException";
 
 export class UserService {
 
