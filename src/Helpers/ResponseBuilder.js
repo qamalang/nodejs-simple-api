@@ -10,8 +10,6 @@ export class ResponseBuilder {
         return {
             success: true,
             message,
-            error_code: null,
-            errors: [],
             data
         };
     }
@@ -23,13 +21,12 @@ export class ResponseBuilder {
      * @param {*} errors 
      * @param {*} error_code 
      */
-    static error(message, errors = [], error_code = 3) {
+    static error(message, errors = [], error_code = 5) {
         return {
             success: false,
             message,
             error_code: error_code,
             errors: errors,
-            data: null
         };
     }
 }

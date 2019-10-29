@@ -7,7 +7,8 @@ module.exports = () => {
     mongoose.connect("mongodb://localhost:27017/node-jwt-auth", {
         useNewUrlParser: true,
         useCreateIndex: true,
-        useFindAndModify: false
+        useFindAndModify: false,
+        useUnifiedTopology: true
     }).then(() => {
         console.log("Connection established successfully.");
     }).catch(error => {
