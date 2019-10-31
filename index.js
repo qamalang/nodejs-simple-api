@@ -5,7 +5,9 @@ import { Router } from "./src/Routes/Router";
 /**
  * Create server
  */
-const server = restify.createServer();
+const server = restify.createServer({
+    ignoreTrailingSlash: true
+});
 
 /**
  * Configure server parser
