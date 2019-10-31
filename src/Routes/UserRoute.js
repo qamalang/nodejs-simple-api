@@ -9,6 +9,10 @@ export class UserRoute {
      * @param {*} server 
      */
     static router (server) {
+        server.get("/", (req, res) => {
+            res.json("Server UP!");
+        });
+
         server.post("/register", UserController.store); // Register route
         server.post("/login", UserController.login); // Login route   
         
