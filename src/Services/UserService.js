@@ -24,16 +24,18 @@ export class UserService {
          * Update token
          */
         const token = new Token().generate({
-            "_id": user._id,
-            "name": user.name,
-            "username": user.username
+            _id: user._id,
+            name: user.name,
+            username: user.username
         });
 
         user.token = token;
         user.save();
 
         return {
-            token: token
+            token: token,
+            name: user.name,
+            username: user.username
         };
     }
 
@@ -67,7 +69,9 @@ export class UserService {
             user.save();
 
             return {
-                token: token
+                token: token,
+                name: user.name,
+                username: user.username
             };
         } else {
             throw new LoginFailedException("Akun tidak ditemukan!");
