@@ -2,6 +2,7 @@ import UserModel from "../Models/UserModel";
 import { Token } from "../Helpers/Token";
 import { LoginFailedException } from "../Exceptions/LoginFailedException";
 import { UploadService } from "./../Services/UploadService";
+import { ValidationException } from "../Exceptions/ValidationException";
 
 export class UserService {
 
@@ -11,6 +12,12 @@ export class UserService {
      * @param {object} data
      */
     static async store(data) {
+        const existingUser = await UserModel.findOne({username: data.username});
+
+        if (existingUser !== null) {
+            throw new ValidationException("Username is already taken, please use another one!");
+        }
+
         const user = await UserModel.create(data);
 
         /**

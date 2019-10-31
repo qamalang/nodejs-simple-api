@@ -3,6 +3,7 @@ import { ResponseBuilder } from "../Helpers/ResponseBuilder";
 import { LoginFailedException } from "../Exceptions/LoginFailedException";
 
 import UserModel from "./../Models/UserModel";
+import { ValidationException } from "../Exceptions/ValidationException";
 
 export class UserController {
 
@@ -17,8 +18,13 @@ export class UserController {
             const result = await UserService.store(req.body);
             res.json(ResponseBuilder.success("Successfully registered!", result));
         } catch (exception) {
-            res.status(500);
-            res.json(ResponseBuilder.error("An erorr occurred", [exception.message], 5));
+            if (exception instanceof ValidationException) {
+                res.status(422);
+                res.json(ResponseBuilder.error("Unprocessable entities", [exception.message], 5));
+            } else {
+                res.status(500);
+                res.json(ResponseBuilder.error("An erorr occurred", [exception.message], 5));
+            }
         }
     }
 
