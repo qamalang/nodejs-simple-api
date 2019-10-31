@@ -1,4 +1,4 @@
-import { UserController } from "../controllers/UserController";
+import { UserController } from "../Controllers/UserController";
 import Authenticate from "./../Middleware/Authenticate";
 
 export class UserRoute {
