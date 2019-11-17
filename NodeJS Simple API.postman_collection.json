@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "d7caad74-c7b2-3557-6575-ddfe3c23bf9e",
+		"name": "NodeJS Simple API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Foo Bar\",\n\t\"username\": \"foobar1\",\n\t\"password\": \"MyPassword\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"askmhs\",\n\t\"password\": \"MyPassword\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGQwYTEwNTVmOGEwOTk0ZjkyZWE3YWEiLCJuYW1lIjoiRm9vIEJhciIsInVzZXJuYW1lIjoiZm9vYmFyMSIsImlhdCI6MTU3Mzk1Mzc5NywiZXhwIjoxNTc0MDQwMTk3fQ.jB5qUg5DqffTED9X-B4f2-nPE3mPhXSeF4c2s-eKfuc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGQwYTEwNTVmOGEwOTk0ZjkyZWE3YWEiLCJuYW1lIjoiRm9vIEJhciIsInVzZXJuYW1lIjoiZm9vYmFyMSIsImlhdCI6MTU3Mzk1Mzc5NywiZXhwIjoxNTc0MDQwMTk3fQ.jB5qUg5DqffTED9X-B4f2-nPE3mPhXSeF4c2s-eKfuc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGQwYTEwNTVmOGEwOTk0ZjkyZWE3YWEiLCJuYW1lIjoiRm9vIEJhciIsInVzZXJuYW1lIjoiZm9vYmFyMSIsImlhdCI6MTU3Mzk1Mzc5NywiZXhwIjoxNTc0MDQwMTk3fQ.jB5qUg5DqffTED9X-B4f2-nPE3mPhXSeF4c2s-eKfuc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Foo Bar Update",
+							"type": "text"
+						},
+						{
+							"key": "profile_picture",
+							"type": "file",
+							"src": "/Users/askmhs/Pictures/1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/profile",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
